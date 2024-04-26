@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Animation Moon</title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            overflow: hidden;
+            background-color: #000;
+            margin-top: 200px;
+        }
+        .moon{
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            position: relative;
+            background-color: #000;
+        }
+        .moon::before{
+            content: "" ;
+            position: absolute;
+            background-color: #fff ;
+            display: block ;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            z-index: -1;
+            animation: 3.2s moon-ani linear
+            infinite alternate;
+        }
+        @keyframes moon-ani{
+            0%{
+               transform: translate(-50px, 50px)
+                  scale(0.9);
+                  box-shadow: none;
+            }
+            50%{
+                transform: translate(0px, 0px)
+                    scale(1.02);
+                    background-color: #efdbd8;
+                    box-shadow: 0 0 100px #efdbd8;   
+            }
+            100%{
+                transform: translate(50px, -50px)
+                          scale(0.9);
+                          box-shadow: none;            
+            } 
+        }
+    </style>
+    </head>
+    <div class="moon"></div>
+</body>
+</html>
